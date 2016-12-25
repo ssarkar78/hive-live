@@ -1,0 +1,217 @@
+<html>
+<head>
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="../css/materialize.css" media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="../css/hive-home.css"/>
+    <!--<link rel='stylesheet' href='../dist/css/perfect-scrollbar.css'/>-->
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=1240,initial-scale=1.0"/>
+</head>
+
+<body>
+<div class="row" id="main-container">
+    <div class="col s2" id="right-panel">
+        <div id="logged-user-container" style="padding-bottom: 10px;border-bottom: 1px solid #e2e2e2"></div>
+        <div id="channel-people-list" style="margin-top: 10px">
+            <div id="my-fav-channels" style="height: 35%;border-bottom: 1px solid #e2e2e2">
+                <div id='my-fav-channel-label' class="section-header">RECENT TAGS</div>
+                <div id="my-fav-channel-list" style="padding-left: 10px;padding-top: 5px"></div>
+            </div>
+            <br>
+            <div id="my-fav-people">
+                <div id='my-fav-people-label' class="section-header">PEOPLE</div>
+                <div id="my-fav-people-list"></div>
+            </div>
+        </div>
+    </div>
+    <div class="col s10" style="padding-left: 0px !important;">
+        <div class="row">
+            <div class="col s12" id="top-container" style="height: 7%">
+                <div class="col s7" id="home-head-container">
+                    <div id="home-head-title"></div>
+                </div>
+                <div class="col s5" id="search-container">
+                    <div class="col s10">
+                        <input id="hive-search" type="text" value="<%=search%>" onfocus="this.value = this.value"
+                               class="search-query"
+                               placeholder="Search">
+                    </div>
+                    <div class="col s1">
+                        <img class="z-depth-0" id="search-icon" title="Search Ripple"
+                             style="cursor:pointer;margin-top: 13px" height="24px" width='24px'
+                             src="../images/tool.png"/></div>
+                    <div class="col s1">
+                        <img title="Create Ripple" id="open-create-ripple" style="cursor:pointer;margin-top: 13px"
+                             width='24px'
+                             src="../images/add-circle-128.png"/></div>
+                </div>
+            </div>
+            <div class="col s7">
+                <div id="middle-panel">
+                    <div class="row" id="chat-feeds-container">
+                        <div class='row' id='ripple-chat-container'></div>
+                        <div id='ripple-chat-bottom-toolbar' valign="bottom"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col s5" id="left-panel">
+                <div class="row" id="recent-feeds-container">
+                    <div class="col s12">
+                        <ul class="tabs hive-tab">
+                            <li class="tab col s6"><a class="active" href="#ripple-tab">RIPPLES</a></li>
+                            <li class="tab col s6"><a href="#user-tab">USER</a></li>
+                        </ul>
+                    </div>
+                    <div id="ripple-tab" class="col s12">
+                        <div id="recentRippleFeeds-container" style="margin-top: 10px"></div>
+                        <div id="recentRippleFeed-container-footer">
+                            <div class="row" style="margin-top: 10px;font-weight: 600;font-size: 11px;cursor: pointer">
+                                <div class="col s4 rippleTab" data-fld='1' style="text-align: center">MY RIPPLE</div>
+                                <div class="col s4 rippleTab" data-fld='2' style="text-align: center;border-left: 1px solid #cccccc;
+                                 border-right: 1px solid #cccccc">RECENT RIPPLES
+                                </div>
+                                <div class="col s4 rippleTab" data-fld='3' style="text-align: center">MY TAG RIPPLES
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div id="user-tab" class="col s12">
+                        <div id="userFeeds-container" style="margin-top: 10px"></div>
+                    </div>
+                </div>
+                <div class="row" id="create-ripple-container" hidden>
+                    <div class="col s12">
+                        <h6 class="section-header" style="text-align: center;padding-top: 10px">CREATE A RIPPLE</h6>
+                        <textarea id="ripple-input-area" class="ripple-input" rows="100" cols="100"
+                                  placeholder="Write something.."></textarea>
+                        <br>
+                        <button id="ripple-post" class="btn hive-btn">POST</button>
+                        <button class="btn hive-btn">SAVE</button>
+                        <br>
+                        <div id="uploading-ripple" style="text-align: center;" hidden>Uploading..</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!--<a style='color: white' class='modal-trigger' href='#modal1'>Click to login..</a>-->
+</div>
+
+<!-- Hidden html for tool tips and menus -->
+<ul id='edit-profile-menu' width="200px !important" class='dropdown-content'>
+    <li><a href="#!">Profile Preference</a></li>
+    <li><a href="#!">Get Twoosh App</a></li>
+    <li><a href="#!">Go offine Mode</a></li>
+</ul>
+<div id="modal1" class="modal modal-fixed-footer">
+    <div class="modal-content">
+        <div class="hive-btm-border hive-middle">
+            <p class="banner">Welcome to HiveLabs</p>
+            <p>Rediscover Communication</p>
+        </div>
+        <p><b>#hive</b> is a part of HiveLabs,by registering to HiveLabs,you can use <b>#hive</b> and other HiveLabs
+            products. Please click register to register your account with us.By doing so you accept the terms and
+            condition laid down by HiveLabs.</p>
+        <p><b>You can quickly set your profile details before registering.</b></p>
+        <form id="register-form" action="/api/profile-edit" method="post" , enctype="multipart/form-data">
+            <div class="row">
+                <div class="col s12">
+                    <div class=" file-field input-field col s3">
+                        <div class="img-post-list">
+                            <img id="blah" src="images/image-placeholder.jpg" width="100px" height="100px" alt=""
+                                 class="responsive-img">
+                            <input id="imgInp" name='avatar' type="file">
+                        </div>
+                    </div>
+                    <div class="col s9">
+                        <input id="name" type="tel" name="name" autocomplete="off" class="validate"
+                               style="text-transform:capitalize;">
+                        <input id="token-dummy" type="text" name="token" hidden>
+                        <input id="phone-dummy" name="phone" autocomplete="off" hidden>
+                        <label for="name">Full Name</label>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <div class="col s12">
+                    <input id="about" type="text" name="about" class="validate">
+                    <label for="about">Say something about you</label>
+                </div>
+                <div class="col s12">
+                    <div class="col s6">
+                        <div id="location-field" style="position: relative">
+                            <img src="images/location.png" height="30px" width="30px"
+                                 style="position: absolute;top:15px">
+                            <span style="cursor: pointer;margin-left:40px;position: absolute;top:20px;text-decoration: underline">Use your Location for better feeds</span>
+                            <input id="location-dummy" name="loc" autocomplete="off" hidden>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+    <div class="modal-footer">
+        <a id="register-btn" href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Register</a>
+    </div>
+</div>
+<div id="modal2" class="modal" style="max-width: 400px; max-height: 600px">
+    <div class="modal-content">
+        <p class="hive-middle banner">HiveLabs</p>
+        <p class="hive-middle" style="font-weight: 600">User login or Register</p>
+        <div class="row">
+            <form id="login" method="post" class="col s12">
+                <div class="row" style="margin-bottom: 20px">
+                    <div class="col s12">
+                        <input id="telephone" type="tel" name="mobile" autocomplete="off" class="validate">
+                        <label for="telephone">Phone</label>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <div class="col s8">
+                        <input id="password" type="password" name="token" class="validate">
+                        <label for="password">Password</label>
+                    </div>
+                </div>
+                <div class="row" style="margin-bottom: 20px">
+                    <div class="col s12" style="text-align: left">
+                        <input class=" hive-btn btn z-depth-0" name="signin" type="submit" id="submit"
+                               value="Enter the rabbit hole">
+                    </div>
+                </div>
+                <div id='row-signup' class="row" hidden>
+                    <p style="color: red">User does not exist or invalid password; Generate pin to sign up or set new
+                        password</p>
+                    <div class="col s6" style="text-align: left;margin-top: 20px">
+                        <input class=" hive-btn btn z-depth-0" name="signup" type="submit" id="pin-gen"
+                               value="Generate pin">
+                    </div>
+                    <div class="col s6">
+                        <div id="token-field" hidden>
+                            <input id="pin" type="text" name="pin" class="validate" autocomplete="off">
+                            <label for="pin">Enter the pin received</label>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!--Import jQuery before materialize.js-->
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/materialize.js"></script>
+<!--<script src='../dist/js/perfect-scrollbar.jquery.js'></script>-->
+<script src='../js/socket.io.js'></script>
+<script src='../js/hive-socket.js'></script>
+<script src='../js/tSocket.js'></script>
+<script type="text/javascript" src="../js/app.js"></script>
+<script type="text/javascript" src="../js/index.js"></script>
+<script type="text/javascript" src="../js/viewModel/view-elements.js"></script>
+<script type="text/javascript" src="../js/home.js"></script>
+</body>
+</html>

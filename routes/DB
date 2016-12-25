@@ -1,0 +1,38 @@
+User
+
+
+Tags
+
+
+
+
+User -
+Your name -
+username -
+email -
+phone -
+location - dynamic
+dob -
+gender -
+password -
+user_tags - {
+
+
+    tagnames : { "poker":1}
+
+
+
+
+}
+
+
+
+Tags -
+
+tagname -
+
+
+
+
+
+

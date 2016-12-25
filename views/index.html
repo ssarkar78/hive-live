@@ -1,0 +1,60 @@
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="css/hive-index.css"/>
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Hive Connect</title>
+    <script src="https://www.gstatic.com/firebasejs/3.6.4/firebase.js"></script>
+    <script>
+  // Initialize Firebase
+    var config = {
+    apiKey: "AIzaSyD3LcH9XyW2jF8Q7UK_HrZMB-lny9jprZY",
+    authDomain: "hive-ba59c.firebaseapp.com",
+    databaseURL: "https://hive-ba59c.firebaseio.com",
+    storageBucket: "hive-ba59c.appspot.com",
+    messagingSenderId: "219842833211"
+     };
+  firebase.initializeApp(config);
+</script>
+    
+</head>
+<body id="entry-page">
+<div id="header-logo">
+    <h3>#hive</h3>
+    <span>You are connected..</span>
+</div>
+<div id="entry-footer">
+    <a href="https://play.google.com/store/apps/details?id=com.twooshlabs.twoosh7&utm_source=global_co&utm_medium=prtnr&utm_content=Mar2515&utm_campaign=PartBadge&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1">
+        <img width="100px" alt="Get it on Google Play"
+             src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png"/></a>
+</div>
+    <div>
+      <button id="sign-in-button" class="mdl-button--raised mdl-button mdl-js-button mdl-js-ripple-effect"><i class="material-icons">account_circle</i> Sign in with Google</button>
+    </div>
+<div id="entry-main-search-container" class="center">
+    <div class="bg-tint" style="position: relative">
+        <div class="col s12" style="padding-bottom:5px;">
+            <div class="row">
+                <div class="row valign-wrapper">
+                    <div class="col s10">
+                        <div class="input-field col s12">
+                        <textarea id="entry-main-search-textarea" rows="1" class="materialize-textarea" spellcheck="false" autofocus></textarea>
+                            <label for="entry-main-search-textarea" style="color: white">Searching or want to say something ?</label>
+                        </div>
+                    </div>
+                    <div class="col s2">
+                        <a href="#" id="entry-main-search-btn" class="hive-btn btn" style="float:right">Search</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <span style="color: white;float: right;position: absolute;bottom:8px;right:10px"><i>Use '#' to point your search</i></span>
+    </div>
+</div>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/materialize.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+</body>
+</html>

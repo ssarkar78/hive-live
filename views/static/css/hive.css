@@ -1,0 +1,576 @@
+#create-ripple {
+    font-size: 11px;
+    position: absolute;
+    left: 9px;
+    top: 44px;
+    color: #651fff !important;
+    cursor: pointer
+}
+
+#user-hit-badge {
+    position: absolute;
+    top: 45px;
+    left: 35%;
+    z-index: 11;
+}
+
+textarea.edit-query {
+    position: absolute;
+    left: -2px;
+    bottom: -47px;
+    width: 42%;
+    border: 1px solid #cccccc;
+    font-size: 11px;
+    background-color: white;
+    padding-left: 10px;
+    padding-right: 200px;
+    height: 30px;
+    z-index: 12;
+}
+
+span.edit-query {
+    background-color: white;
+    color: #cccccc;
+    z-index: 13;
+    font-size: 9px;
+    position: absolute;
+    left: 300px;
+    padding: 2px 2px 2px 2px;
+    bottom: -45px;
+}
+
+input.search-query {
+    border: 1px solid #cccccc;
+    background-color: white;
+    padding-left: 10px;
+    height: 30px;
+    margin-top: 10px;
+    border-radius: 15px;
+}
+
+input.reply-query {
+    border: 1px solid #cccccc;
+    background-color: white;
+    padding-left: 10px;
+    height: 35px;
+    border-radius: 10px;
+}
+
+input.edit-query:focus {
+    border: 1px solid #cccccc !important;
+    border-bottom: none;
+    box-shadow: 0 1px 0 0 #cccccc !important;
+}
+
+input.reply-query:focus {
+    border: 1px solid #cccccc !important;
+    border-bottom: none;
+    box-shadow: 0 1px 0 0 #cccccc !important;
+}
+
+input.search-query:focus {
+    border: 1px solid #cccccc !important;
+    border-bottom: none;
+    box-shadow: 0 1px 0 0 #cccccc !important;
+}
+
+#container {
+    height: 100%;
+    border-collapse: collapse;
+}
+body#entry-page {
+    height:97.9%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+pre.ripple-title{
+    margin-top: 5px;
+}
+#ripple-create-title {
+    margin-top: 0px;
+    max-height: 50px;
+    overflow-y: auto;
+    word-wrap: break-word;
+    color: #2c2d30;
+    font-weight: 900;
+    font-size: 1.125rem;
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+}
+
+#ripple-create-container {
+    position: relative;
+}
+
+#search-container {
+    position: relative;
+}
+
+/*materail icon */
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: url(../font/material-design-icons/Material-Design-Icons.eot); /* For IE6-8 */
+    src: local('Material Icons'),
+    local('MaterialIcons-Regular'),
+    url(../font/material-design-icons/Material-Design-Icons.woff2) format('woff2'),
+    url(../font/material-design-icons/Material-Design-Icons.woff) format('woff'),
+    url(../font/material-design-icons/Material-Design-Icons.ttf) format('truetype');
+}
+
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px; /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+}
+
+/*......*/
+
+/*twoosh style classes*/
+.logo-placeholder {
+    font-weight: bold;
+    color: #333333;
+}
+
+.bg-white {
+    background-color: white;
+}
+
+.twoosh-color {
+    background-color: white !important;
+    border-bottom: 1px solid #cccccc;
+}
+
+.twoosh-middle {
+    text-align: center;
+}
+
+.twoosh-btm-border {
+    border-bottom: 1px solid #cccccc;
+}
+
+span.highlight {
+    background-color: #e4e4e4;
+    cursor: pointer;
+    border: none;
+}
+
+span.normal {
+    background: white;
+    border: none;
+}
+
+a.user-link {
+    color: #333333;
+}
+
+a.user-link:hover {
+    color: #333333;
+    text-decoration: underline;
+}
+
+a.tag-link {
+    color: #651fff !important;;
+}
+.tag-chip:hover{
+    background-color: #e4e4e4;
+    cursor: pointer;
+}
+
+/*Material override starts*/
+body {
+    background-color: #fafafa !important;
+}
+
+footer {
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+}
+
+.dropdown-content li > a {
+    color: #333333 !important;
+}
+
+.dropdown-content {
+    min-width: 200px !important;
+}
+
+.brand-logo {
+    margin-left: 20px;
+}
+
+.row {
+    margin-bottom: 0px !important;
+}
+
+nav {
+    height: 50px !important;
+    color: #333333;
+    position: fixed !important;
+    top: 0px;
+    z-index: 10;
+}
+textarea.ripple-chat-bottom-toolbar{
+    border-radius: 8px;
+    padding:5px;
+    max-height: 200px;
+    min-height: 1.5rem !important;
+}
+
+textarea.materialize-textarea.reply-textarea {
+    border-bottom: none;
+    box-shadow: 1px solid #cccccc;
+    border: 1px solid #cccccc;
+    min-height: 3rem !important;
+    font-size: 14.5px !important;
+    padding: 1px;
+}
+
+textarea.materialize-textarea.reply-textarea:focus {
+    border: 1px solid #cccccc !important;
+    border-bottom: none;
+    box-shadow: 0 1px 0 0 #cccccc !important;
+}
+
+textarea.materialize-textarea#textarea1,textarea.materialize-textarea.ripple-chat-bottom-toolbar {
+    border-bottom: none;
+    box-shadow: 1px solid #cccccc;
+    border: none;
+    min-height: 3rem !important;
+    padding: 1px;
+}
+
+textarea.materialize-textarea:focus {
+    border-bottom: none !important;
+    box-shadow: none !important;
+}
+
+#tarea2-ifield.input-field{
+    margin-top: 0px;
+}
+.chip {
+    height: 20px;
+    line-height: 20px;
+    margin: 3px;
+    cursor: pointer;
+}
+
+table {
+    font-size: 14px !important;
+}
+
+/*Material override ends*/
+.content-editable {
+    border-bottom: none !important;
+    box-shadow: none !important;
+    outline: 0px solid transparent;
+}
+
+.content-editable:focus {
+    border-bottom: none !important;
+    box-shadow: none !important;
+    outline: 0px solid transparent;
+}
+
+[contenteditable]:focus {
+    outline: 0px solid transparent;
+    word-wrap: break-word;
+}
+
+/*change scroll bar style*/
+
+#chat-container::-webkit-scrollbar {
+    width: 12px;
+}
+
+#chat-container::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+#chat-container::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+.hidden {
+    display: none;
+}
+
+#chat-container-main {
+}
+
+#chat-container-wraper {
+    position: fixed;
+}
+
+#chat-container-body {
+    height: 60%;
+    position: fixed;
+    width: 40%;
+}
+
+#chat-container {
+    overflow-y: hidden;
+    width: 100%;
+    height: 100%;
+    word-wrap: break-word;
+    padding-top: 10px;
+    font-size: 14px !important;
+    overflow-x: hidden;
+}
+
+#chat-container:hover {
+    overflow-y: auto;
+}
+
+.chat-msg-element {
+    cursor: pointer;
+    border-bottom: 1px solid #e4e4e4;
+    padding-bottom: 5px;
+    padding-right: 5px;
+    padding-top: 5px;
+}
+
+.chat-msg-element img {
+    height: 30px !important;
+    width: 30px !important;
+}
+
+.chat-msg-element table td {
+    padding: 0px 0px 0px 0px !important;
+}
+
+.chat-msg-owner-status {
+    color: #9e9e9e;
+    font-size: 11.5px;
+}
+
+.subscribe-btn {
+    margin-left: 10px;
+    padding: 0 1rem !important;
+    font-size: 10px !important;
+    background-color: #651fff !important;
+    height: 26px;
+    line-height: 26px;
+}
+
+.subscribed-btn {
+    margin-left: 10px;
+    padding: 0 1rem !important;
+    font-size: 10px !important;
+    background-color: white !important;
+    color: #333333;
+    height: 26px;
+    line-height: 26px;
+}
+
+#twoosh-send-btn {
+    padding: 0 1rem !important;
+    font-size: 10px !important;
+    background-color: #651fff !important;
+    height: 26px;
+    line-height: 26px;
+}
+
+.twoosh-btn {
+    padding: 0 1rem !important;
+    font-size: 9px !important;
+    background-color: #651fff !important;
+    height: 20px;
+    line-height: 20px;
+}
+
+.hive-tab {
+    font-size: 9px !important;
+    background-color: transparent !important;
+    height: 30px !important;
+    line-height: 30px !important;
+    color: #651fff !important;
+    overflow: hidden !important;
+}
+
+.tabs a {
+    font-size: 9px !important;
+    background-color: transparent !important;
+    height: 30px !important;
+    line-height: 30px !important;
+    color: #651fff !important;
+    overflow: hidden !important;
+}
+.tabs .indicator{
+    background-color: #4d394b !important;
+}
+
+.twoosh-post-element {
+    margin-top: 10px;
+    word-wrap:break-word;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.twoosh-post-element img {
+    height: 30px !important;
+    width: 30px !important;
+}
+
+.twoosh-post-element table td {
+    padding: 0px 0px 0px 0px !important;
+}
+
+.twoosh-post-owner-status {
+    color: #9e9e9e;
+    font-size: 11.5px;
+}
+
+pre {
+    color: #333333;
+    font-size: 14.5px;
+    font-family: "Roboto", sans-serif;
+    white-space: pre-wrap; /* CSS 3 */
+    white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+    white-space: -pre-wrap; /* Opera 4-6 */
+    white-space: -o-pre-wrap; /* Opera 7 */
+    word-wrap: break-word; /* Internet Explorer 5.5+ */
+}
+
+/*entry page css */
+#login-container {
+    width: 480px;
+    padding-top: 5px;
+    position: absolute;
+    top: 0%;
+    right: 15px;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+#pin-container {
+    display: none;
+    width: 480px;
+    padding-top: 5px;
+    position: absolute;
+    top: 0%;
+    right: 15px;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+#login-header {
+    background-color: #ffffff;
+    text-align: center;
+    border-bottom: 1px solid #cccccc;
+}
+
+/*entry page css ends here */
+#head-toolbar {
+    max-width: 80px !important;
+    margin-left: 10px;
+}
+
+#main-container {
+    background-color: #fafafa !important;
+}
+
+#reply-container {
+    /*position: relative !important;*/
+    /*bottom: 0px !important;*/
+    width: 100% !important;
+    background-color: #ffffff;
+    z-index: 9;
+}
+
+html {
+    height: 98.9%;
+    font-size: 14.5px !important;
+}
+body{
+    height:100%;
+}
+
+.bg-tint {
+    background-color: rgba(223, 223, 255, 0.7);
+}
+
+.post-action > a {
+    margin-left: 20px;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.post-card {
+    margin-bottom: 10px
+}
+
+.post-topic-name {
+    margin-left: 5px !important;
+    color: #2196f3;
+    font-size: 14px !important;
+}
+
+#post-container-items {
+    width: 100%;
+    margin-top: 20px;
+    padding-bottom: 20px;
+}
+
+#my-profile-card {
+    margin-top: 10px;
+}
+
+#my-profile-card-img {
+    height: 30px !important;
+    width: 30px !important;
+}
+
+/*left side panel css */
+#my-fav-people {
+    margin-top: 20px;
+}
+
+.status-icon {
+    float: right;
+    position: relative;
+    bottom: -10px;
+    right: 20px;
+}
+
+.my-fav-people-list-item-container:hover {
+    background-color: #e4e4e4;
+    cursor: pointer;
+}
+#logged-user-container{
+    cursor: pointer;
+}
+

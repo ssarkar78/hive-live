@@ -1,0 +1,379 @@
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+#main-container {
+    background-color: #fafafa !important;
+}
+
+#home-head-container {
+    position: relative;
+}
+
+#home-head-title {
+    margin-top: 0px;
+    max-height: 45px;
+    overflow-y: auto;
+    word-wrap: break-word;
+    color: #2c2d30;
+    font-weight: 900;
+    font-size: 1rem;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: 'liga';
+}
+
+#search-container {
+    position: relative;
+}
+
+input.search-query {
+    border: 1px solid #cccccc;
+    background-color: white;
+    padding-left: 10px;
+    height: 30px;
+    margin-top: 8px;
+    border-radius: 15px;
+}
+
+input.search-query:focus {
+    border: 1px solid #cccccc !important;
+    border-bottom: none;
+    box-shadow: 0 0px 0 #cccccc !important;
+}
+
+/*Actually the left panel*/
+#right-panel {
+    position: relative;
+    font-size: 11.5px;
+    color: black;
+    padding-top: 10px;
+    border-right-color: black;
+    background-color: white;
+    height: 100%;
+    box-shadow: 1px 0px 0px rgba(0, 0, 0, .1);
+}
+
+/*the right panel*/
+#left-panel {
+    margin-top: 5px;
+    border-left-color: black;
+    background-color: white;
+    height: 91.5%;
+    padding-right: 0px !important;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .1);
+}
+
+#recentRippleFeeds-container {
+    overflow-y: auto;
+    position: relative;
+    height: 90%;
+    width: 100%;
+}
+
+#ripple-tab {
+    padding-right: 0px !important;
+}
+
+#top-container {
+    padding-left: 0px !important;
+    border-left-color: black;
+    background-color: white;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .1);
+}
+
+#middle-panel {
+    margin-top: 5px;
+    border-left-color: black;
+    background-color: white;
+    height: 91.7%;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .1);
+}
+
+textarea.ripple-chat-bottom-toolbar {
+    font-weight: bold;
+    font-size: 11.5px;
+    margin-bottom: 0px;
+    border-radius: 8px;
+    padding: 5px;
+    max-height: 200px;
+    min-height: 1rem !important;
+}
+
+textarea.materialize-textarea.reply-textarea {
+    border-bottom: none;
+    box-shadow: #cccccc;
+    border: 1px solid #cccccc;
+    min-height: 3rem !important;
+    font-size: 14.5px !important;
+    padding: 1px;
+}
+
+textarea.materialize-textarea.reply-textarea:focus {
+    border: 1px solid #cccccc !important;
+    border-bottom: none;
+    box-shadow: 0 0px 0 #cccccc !important;
+}
+
+textarea.materialize-textarea.ripple-chat-bottom-toolbar {
+    border-bottom: none;
+    box-shadow: #cccccc;
+    border: none;
+    padding: 1px;
+}
+
+.hive-tab {
+    font-family: "Roboto", arial, sans-serif;
+    color: #e53935;
+    overflow: hidden;
+    white-space: nowrap;
+    word-wrap: normal;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    display: block;
+    font-weight: 600;
+    text-transform: uppercase;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: 'liga';
+    font-size: 9px !important;
+    background-color: transparent !important;
+    height: 30px !important;
+    line-height: 30px !important;
+    color: #651fff !important;
+    overflow: hidden !important;
+}
+
+a.tag-link {
+    color: #167ac6 !important;
+    font-weight: 500;
+}
+
+a.tag-link:hover {
+    text-decoration: underline;
+}
+
+a.user-link {
+    color: grey;
+    font-weight: 600;
+    text-decoration: none;
+    word-break: break-all;
+    font: 12px Roboto,arial,sans-serif;
+    line-height: 1.3em;
+}
+
+a.user-link:hover {
+    text-decoration: underline;
+}
+
+#ripple-chat-container {
+    overflow-x:auto;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    position: relative;
+    height: 92%;
+    width: 100%;
+    word-wrap: break-word;
+    padding-right: 10px;
+    padding-top: 10px;
+    font-size: 11.5px !important;
+}
+
+.ripple-chat-element {
+    margin-top: 10px;
+    word-wrap: break-word;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.ripple-chat-element img {
+    height: 30px !important;
+    width: 30px !important;
+}
+
+.ripple-chat-element table td {
+    padding: 0px 0px 0px 0px !important;
+}
+
+.ripple-chat-owner-status {
+    color: #9e9e9e;
+    font-size: 11.5px;
+}
+
+pre {
+    color: #2c2d30;
+    font-size: 12.5px;
+    /*color: #222;*/
+    font-weight: 400;
+    font-family: "Roboto", sans-serif;
+    white-space: pre-wrap; /* CSS 3 */
+    white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+    white-space: -o-pre-wrap; /* Opera 7 */
+    word-wrap: break-word; /* Internet Explorer 5.5+ */
+}
+
+.ripple-feeds-element {
+    font-size: 11.5px !important;
+    cursor: pointer;
+    border-bottom: 1px solid #e4e4e4;
+    padding-bottom: 5px;
+    padding-right: 15px;
+    margin-right: 15px;
+    padding-top: 5px;
+}
+
+.ripple-feeds-element img {
+    height: 30px !important;
+    width: 30px !important;
+}
+
+.ripple-feeds-element-text {
+    font-weight: 600;
+    font-size: 13.5px;
+    color: #222;
+}
+
+.ripple-feeds-element table td {
+    padding: 0px 0px 0px 0px !important;
+}
+
+.ripple-feeds-owner-status {
+    color:  #167ac6 !important;
+    font-size: 12.5px;
+}
+
+/*Classes css*/
+.banner {
+    color: #651fff;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.tag-chat-btn,.user-chat-btn,.ripple-chat-btn {
+    padding: 0 1rem !important;
+    font-size: 10px !important;
+    background-color: #167ac6 !important;
+    height: 20px;
+    line-height: 20px;
+}
+.hive-btn {
+    padding: 0 1rem !important;
+    font-size: 10px !important;
+    background-color: #651fff !important;
+    height: 20px;
+    line-height: 20px;
+}
+
+.bg-white {
+    background-color: white;
+}
+
+.hive-middle {
+    text-align: center;
+}
+
+.hive1-btm-border {
+    border-bottom: 1px solid #cccccc;
+}
+
+.section-header {
+    font-family: "Roboto", arial, sans-serif;
+    color: #e53935;
+    overflow: hidden;
+    white-space: nowrap;
+    word-wrap: normal;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    display: block;
+    margin-top: 0px;
+    max-height: 45px;
+    line-height: 13px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: 'liga';
+}
+
+/*ends*/
+
+/*Material overide*/
+textarea.materialize-textarea:focus {
+    border-bottom: none !important;
+    box-shadow: 0 0 0 #cccccc !important;
+}
+
+.tabs .tab a:hover {
+    color: #e53935;
+}
+
+.tabs a {
+    line-height: 30px;
+    font-size: 10px;
+    background-color: transparent !important;
+    height: 30px !important;
+    overflow: hidden !important;
+    font-family: "Roboto", arial, sans-serif;
+    color: #e53935;
+    white-space: nowrap;
+    word-wrap: normal;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    display: block;
+    font-weight: 600;
+    text-transform: uppercase;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: 'liga';
+}
+
+.tabs .indicator {
+    background-color: #e2e2e2 !important;
+}
+
+.row {
+    margin-bottom: 0px;
+}
+
+table {
+    font-size: 11.5px !important;
+}
+
+textarea.ripple-input {
+    height: 200px;
+    max-width: 99%;
+}
+
+/*Scroll bar styling*/
+#recentRippleFeeds-container::-webkit-scrollbar {
+    width: 12px;
+}
+
+#recentRippleFeeds-container::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+#recentRippleFeeds-container::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+#ripple-chat-container::-webkit-scrollbar {
+    width: 12px;
+}
+
+#ripple-chat-container::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+#ripple-chat-container::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
