@@ -40,11 +40,11 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(cookieParser());
 app.use(morgan('dev'));
 
-var redis = require('redis');
-var client = redis.createClient();
-client.on('connect', function () {
-    console.log('connected to redis');
-});
+// var redis = require('redis');
+// var client = redis.createClient();
+// client.on('connect', function () {
+//     console.log('connected to redis');
+// });
 function detectSource(request) {
     var ua = request.headers['user-agent'],
         $ = {};
